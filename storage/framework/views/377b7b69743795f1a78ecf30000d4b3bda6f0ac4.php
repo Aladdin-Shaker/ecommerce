@@ -1,0 +1,1 @@
+<?php /**PATH /home/sniper/Desktop/my_project/Ecommerce/Ecommerce/resources/views/admin/layouts/message.blade.php ENDPATH**/ ?>
