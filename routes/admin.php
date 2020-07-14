@@ -16,14 +16,20 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     // authunticated admin
     Route::group(['middleware' => 'admin:admin'], function () {
+        Route::delete('admin/destroy/all', 'AdminController@multi_delete'); // delete all admin records
+        Route::delete('users/destroy/all', 'UserController@multi_delete'); // delete all user records
+        Route::delete('countries/destroy/all', 'CountryController@multi_delete'); // delete all user records
+        Route::delete('cities/destroy/all', 'CityController@multi_delete'); // delete all user records
+
         Route::resource('admin', 'AdminController');
         Route::resource('users', 'UserController');
+        Route::resource('countries', 'CountryController');
+        Route::resource('cities', 'CityController');
+
         Route::get('/', function () {
             return view('admin.home');
         });
         Route::any('logout', 'AdminAuth@Logout');
-        Route::delete('admin/destroy/all', 'AdminController@multi_delete'); // delete all admin records
-        Route::delete('users/destroy/all', 'UserController@multi_delete'); // delete all user records
         Route::get('settings', 'Settings@settings');
         Route::post('settings', 'Settings@settings_save');
     });

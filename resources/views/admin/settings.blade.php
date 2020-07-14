@@ -30,15 +30,21 @@
         </div>
         <div class="form-group">
             {!! Form::label('logo', trans('admin.logo')) !!}
-            {!! Form::file('logo', setting()->logo, ['class'
+            {!! Form::file('logo', ['class'
             =>
             'form-control']) !!}
+            @if (!empty(setting()->logo))
+            <img src="{{Storage::url(setting()->logo)}}" height="100px"
+                width="100px" />
+            @endif
         </div>
         <div class="form-group">
             {!! Form::label('icon', trans('admin.icon')) !!}
-            {!! Form::file('icon', setting()->icon, ['class'
-            =>
-            'form-control']) !!}
+            {!! Form::file('icon', ['class' => 'form-control']) !!}
+            @if (!empty(setting()->icon))
+            <img src="{{Storage::url(setting()->icon)}}" height="100px"
+                width="100px" />
+            @endif
         </div>
         <div class="form-group">
             {!! Form::label('description', trans('admin.description')) !!}

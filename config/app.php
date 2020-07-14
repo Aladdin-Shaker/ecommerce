@@ -232,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\HtmlFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Up' => App\Http\Controllers\Upload::class,
 
     ],
 

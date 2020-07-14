@@ -154,6 +154,87 @@
                     </li>
                 </ul>
 
+                
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                           with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview <?php echo e(active_menu('countries')[0]); ?>">
+                        <a href="<?php echo e(aurl('countries')); ?>" class="nav-link">
+                            <i class="nav-icon fas fa-flag"></i>
+                            <p>
+                                <?php echo e(trans('admin.countries')); ?>
+
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview <?php echo e(active_menu('countries')[1]); ?>">
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('countries')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-flag nav-icon"></i>
+                                    <?php echo e(trans('admin.countries')); ?>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('countries/create')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    <?php echo e(trans('admin.create_country')); ?>
+
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+
+                
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                           with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview <?php echo e(active_menu('cities')[0]); ?>">
+                        <a href="<?php echo e(aurl('cities')); ?>" class="nav-link">
+                            <i class="nav-icon fas fa-globe"></i>
+                            <p>
+                                <?php echo e(trans('admin.cities')); ?>
+
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview <?php echo e(active_menu('cities')[1]); ?>">
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('cities')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-globe nav-icon"></i>
+                                    <?php echo e(trans('admin.cities')); ?>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('cities/create')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    <?php echo e(trans('admin.create_city')); ?>
+
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+
+
             </nav>
         </div>
         <!-- /.sidebar-menu -->

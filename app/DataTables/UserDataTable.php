@@ -29,7 +29,7 @@ class UserDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\AdminDataTable $model
+     * @param \App\ $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query()
@@ -49,7 +49,7 @@ class UserDataTable extends DataTable
     public function html()
     {
         return $this->builder()
-            ->setTableId('admindatatable-table')
+            ->setTableId('userdatatable-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->dom('Blfrtip')

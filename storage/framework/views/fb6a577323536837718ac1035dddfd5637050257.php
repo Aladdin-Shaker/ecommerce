@@ -36,18 +36,24 @@
         <div class="form-group">
             <?php echo Form::label('logo', trans('admin.logo')); ?>
 
-            <?php echo Form::file('logo', setting()->logo, ['class'
+            <?php echo Form::file('logo', ['class'
             =>
             'form-control']); ?>
 
+            <?php if(!empty(setting()->logo)): ?>
+            <img src="<?php echo e(Storage::url(setting()->logo)); ?>" height="100px"
+                width="100px" />
+            <?php endif; ?>
         </div>
         <div class="form-group">
             <?php echo Form::label('icon', trans('admin.icon')); ?>
 
-            <?php echo Form::file('icon', setting()->icon, ['class'
-            =>
-            'form-control']); ?>
+            <?php echo Form::file('icon', ['class' => 'form-control']); ?>
 
+            <?php if(!empty(setting()->icon)): ?>
+            <img src="<?php echo e(Storage::url(setting()->icon)); ?>" height="100px"
+                width="100px" />
+            <?php endif; ?>
         </div>
         <div class="form-group">
             <?php echo Form::label('description', trans('admin.description')); ?>

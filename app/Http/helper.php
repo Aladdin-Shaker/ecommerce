@@ -22,7 +22,7 @@ if (!function_exists('lang')) {
         if (session('lang')) {
             return session('lang');
         } else {
-            return 'en';
+            return setting()->main_lang;
         }
     }
 }
@@ -87,5 +87,25 @@ if (!function_exists('setting')) {
     function setting()
     {
         return \App\Model\Setting::orderBy('id', 'desc')->first(); // call the last value of setings
+    }
+}
+
+if (!function_exists('up')) {
+    function up()
+    {
+        return new \App\Http\Controllers\Upload; // call the last value of setings
+    }
+}
+
+////////////////// Validation helper functions ///////////////////
+
+if (!function_exists('v_image')) {
+    function v_image($ex = null)
+    {
+        if ($ex === null) {
+            return 'image|mimes:png,jpg,jpeg,gif';
+        } else {
+            return 'image|mimes:' . $ex;
+        }
     }
 }

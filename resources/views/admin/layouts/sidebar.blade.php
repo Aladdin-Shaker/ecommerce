@@ -144,6 +144,81 @@
                     </li>
                 </ul>
 
+                {{-- countries --}}
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                           with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview {{active_menu('countries')[0]}}">
+                        <a href="{{aurl('countries')}}" class="nav-link">
+                            <i class="nav-icon fas fa-flag"></i>
+                            <p>
+                                {{trans('admin.countries')}}
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview {{active_menu('countries')[1]}}">
+                            <li class="nav-item">
+                                <a href="{{aurl('countries')}}"
+                                    class="nav-link">
+                                    <i class="fas fa-flag nav-icon"></i>
+                                    {{trans('admin.countries')}}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{aurl('countries/create')}}"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    {{trans('admin.create_country')}}
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+
+                {{-- cities --}}
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                           with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview {{active_menu('cities')[0]}}">
+                        <a href="{{aurl('cities')}}" class="nav-link">
+                            <i class="nav-icon fas fa-globe"></i>
+                            <p>
+                                {{trans('admin.cities')}}
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview {{active_menu('cities')[1]}}">
+                            <li class="nav-item">
+                                <a href="{{aurl('cities')}}"
+                                    class="nav-link">
+                                    <i class="fas fa-globe nav-icon"></i>
+                                    {{trans('admin.cities')}}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{aurl('cities/create')}}"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    {{trans('admin.create_city')}}
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+
+
             </nav>
         </div>
         <!-- /.sidebar-menu -->
