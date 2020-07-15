@@ -212,13 +212,45 @@
                                     {{trans('admin.create_city')}}
                                 </a>
                             </li>
-
-
                         </ul>
                     </li>
                 </ul>
 
-
+                {{-- states --}}
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                        with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview {{active_menu('states')[0]}}">
+                        <a href="{{aurl('states')}}" class="nav-link">
+                            <i class="nav-icon fas fa-university"></i>
+                            <p>
+                                {{trans('admin.states')}}
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview {{active_menu('states')[1]}}">
+                            <li class="nav-item">
+                                <a href="{{aurl('states')}}"
+                                    class="nav-link">
+                                    <i
+                                        class="fas fa-university nav-icon"></i>
+                                    {{trans('admin.states')}}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{aurl('states/create')}}"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    {{trans('admin.create_state')}}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
         </div>
         <!-- /.sidebar-menu -->

@@ -2,10 +2,10 @@
 
 namespace App\DataTables;
 
-use App\Model\City;
+use App\Model\State;
 use Yajra\DataTables\Services\DataTable;
 
-class CityDataTable extends DataTable
+class StateDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -17,9 +17,9 @@ class CityDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('edit', 'admin.cities.btn.edit')
-            ->addColumn('delete', 'admin.cities.btn.delete')
-            ->addColumn('checkbox', 'admin.cities.btn.checkbox')
+            ->addColumn('edit', 'admin.states.btn.edit')
+            ->addColumn('delete', 'admin.states.btn.delete')
+            ->addColumn('checkbox', 'admin.states.btn.checkbox')
             ->rawColumns([
                 'edit', 'delete', 'checkbox'
             ]);
@@ -28,12 +28,12 @@ class CityDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\CityDataTable $model
+     * @param \App\StateDataTable $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query()
     {
-        return City::query()->with('country')->select('cities.*');
+        return State::query()->with('country')->with('city')->select('states.*');
     }
 
     /**
@@ -44,7 +44,7 @@ class CityDataTable extends DataTable
     public function html()
     {
         return $this->builder()
-            ->setTableId('citydatatable-table')
+            ->setTableId('statedatatable-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->dom('Blfrtip')
@@ -57,7 +57,7 @@ class CityDataTable extends DataTable
                     ['extend' => 'excel', 'className' => 'btn btn-success mb-3', 'text' => trans('admin.ex.excel')],
                     [
                         'className' => 'btn btn-primary mb-3',
-                        'text' => trans('admin.create_city'),
+                        'text' => trans('admin.create_state'),
                         'action' => "function(){ window.location.href = '" . url()->current() . "/create'; }"
                     ],
                     ['className' => 'btn btn-danger mb-3 delBtn', 'text' => trans('admin.delete_all')],
@@ -65,7 +65,7 @@ class CityDataTable extends DataTable
 
                 ],
                 'initComplete' => 'function () {
-                    this.api().columns([1,2,3]).every(function () {
+                    this.api().columns([1,2,3,4]).every(function () {
                         var column = this;
                         var input = document.createElement("input");
                         $(input).appendTo($(column.footer()).empty())
@@ -97,18 +97,24 @@ class CityDataTable extends DataTable
                 'searchable' => false,
             ],
             [
-                'name' => 'city_name_ar',
-                'data' => 'city_name_ar',
-                'title' => trans('admin.city_name_ar'),
+                'name' => 'state_name_ar',
+                'data' => 'state_name_ar',
+                'title' => trans('admin.state_name_ar'),
             ],
             [
-                'name' => 'city_name_en',
-                'data' => 'city_name_en',
-                'title' => trans('admin.city_name_en'),
-            ], [
+                'name' => 'state_name_en',
+                'data' => 'state_name_en',
+                'title' => trans('admin.state_name_en'),
+            ],
+            [
                 'name' => 'country.country_name_' . session('lang'),
                 'data' => 'country.country_name_' . session('lang'),
                 'title' => trans('admin.country'),
+            ],
+            [
+                'name' => 'city.city_name_' . session('lang'),
+                'data' => 'city.city_name_' . session('lang'),
+                'title' => trans('admin.city'),
             ],
             [
                 'name' => 'created_at',
@@ -150,6 +156,6 @@ class CityDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'cities_' . date('YmdHis');
+        return 'states_' . date('YmdHis');
     }
 }
