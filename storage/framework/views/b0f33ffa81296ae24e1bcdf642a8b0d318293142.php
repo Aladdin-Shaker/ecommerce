@@ -93,6 +93,14 @@
 <script type="text/javascript"
     src="<?php echo e(url('/design/adminlte/dist/js/myFunctions.js')); ?>"></script>
 
+<!-- jsTree -->
+<script type="text/javascript"
+    src="<?php echo e(url('/design/adminlte/jstree/jstree.js')); ?>"></script>
+<script type="text/javascript"
+    src="<?php echo e(url('/design/adminlte/jstree/jstree.wholerow.js')); ?>"></script>
+<script type="text/javascript"
+    src="<?php echo e(url('/design/adminlte/jstree/jstree.checkbox.js')); ?>"></script>
+
 
 
 <?php echo $__env->yieldPushContent('scripts'); ?>

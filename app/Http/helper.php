@@ -19,10 +19,10 @@ if (!function_exists('admin')) {
 if (!function_exists('lang')) {
     function lang()
     {
-        if (session('lang')) {
+        if (session()->has('lang')) {
             return session('lang');
         } else {
-            return setting()->main_lang;
+            return session()->put(setting()->main_lang);
         }
     }
 }
@@ -94,6 +94,45 @@ if (!function_exists('up')) {
     function up()
     {
         return new \App\Http\Controllers\Upload; // call the last value of setings
+    }
+}
+
+if (!function_exists('load_dep')) {
+    function load_dep($select = null, $dep_hide = null)
+    {
+        $departments = \App\Model\Department::selectRaw('dep_name_' . session('lang') . ' as text')
+            ->selectRaw('parent as parent')
+            ->selectRaw('id as id')
+            ->get(['text', 'id', 'parent']);
+        $dep_array = [];
+        foreach ($departments as $department) {
+            $list_array = [];
+            $list_array['icon'] = '';
+            $list_array['li_attr'] = '';
+            $list_array['a_attr'] = '';
+            $list_array['children'] = [];
+            if ($select !== null and $select == $department->id) {
+                $list_array['state'] = [
+                    'opened' => true,
+                    'selected' => true,
+                    'disabled' => false
+                ];
+            }
+            if ($dep_hide !== null and $dep_hide == $department->id) {
+                $list_array['state'] = [
+                    'opened' => false,
+                    'selected' => false,
+                    'disabled' => true,
+                    'hidden' => true
+                ];
+            }
+            $list_array['id'] = $department->id;
+            $list_array['parent'] = $department->parent !== null ? $department->parent : '#';
+            $list_array['text'] = $department->text;
+
+            array_push($dep_array, $list_array);
+        }
+        return json_encode($dep_array, JSON_UNESCAPED_UNICODE);
     }
 }
 

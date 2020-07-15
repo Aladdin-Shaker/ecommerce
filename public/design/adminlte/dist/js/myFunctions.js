@@ -1,4 +1,4 @@
-const { filter } = require("lodash");
+// const { filter } = require("lodash");
 
 function check_all() {
     $('input[class="item_checkbox"]:checkbox').each(function () {

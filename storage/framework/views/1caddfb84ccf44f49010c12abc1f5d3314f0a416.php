@@ -61,6 +61,9 @@
         href="<?php echo e(url('/design/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')); ?>">
     <link rel="stylesheet"
         href="<?php echo e(url('/design/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')); ?>">
+    <!-- jsTree -->
+    <link rel="stylesheet"
+        href="<?php echo e(url('/design/adminlte/jstree/themes/default/style.css')); ?>">
 
 </head>
 <?php /**PATH /home/sniper/Desktop/ecommerc project/Ecommerce/Ecommerce/resources/views/admin/layouts/header.blade.php ENDPATH**/ ?>

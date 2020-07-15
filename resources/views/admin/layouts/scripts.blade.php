@@ -93,6 +93,14 @@
 <script type="text/javascript"
     src="{{ url('/design/adminlte/dist/js/myFunctions.js') }}"></script>
 
+<!-- jsTree -->
+<script type="text/javascript"
+    src="{{ url('/design/adminlte/jstree/jstree.js') }}"></script>
+<script type="text/javascript"
+    src="{{ url('/design/adminlte/jstree/jstree.wholerow.js') }}"></script>
+<script type="text/javascript"
+    src="{{ url('/design/adminlte/jstree/jstree.checkbox.js') }}"></script>
+
 
 
 @stack('scripts')

@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::resource('countries', 'CountryController');
         Route::resource('cities', 'CityController');
         Route::resource('states', 'StateController');
+        Route::resource('departments', 'DepartmentController');
 
         Route::get('/', function () {
             return view('admin.home');

@@ -270,6 +270,44 @@
                         </ul>
                     </li>
                 </ul>
+
+                
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                        with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview <?php echo e(active_menu('departments')[0]); ?>">
+                        <a href="<?php echo e(aurl('departments')); ?>" class="nav-link">
+                            <i class="nav-icon fas fa-list"></i>
+                            <p>
+                                <?php echo e(trans('admin.departments')); ?>
+
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview <?php echo e(active_menu('departments')[1]); ?>">
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('departments')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-list nav-icon"></i>
+                                    <?php echo e(trans('admin.departments')); ?>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('departments/create')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    <?php echo e(trans('admin.create_department')); ?>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
         </div>
         <!-- /.sidebar-menu -->
