@@ -44,7 +44,7 @@
                         </a>
                         <ul
                             class="nav nav-treeview <?php echo e(active_menu('')[1]); ?>">
-                            <li class="nav-item has-treeview menu-close">
+                            <li class="nav-item has-treeview ">
                                 <a href="<?php echo e(aurl()); ?>" class="nav-link">
                                     <i
                                         class="nav-icon fas fa-tachometer-alt"></i>
@@ -55,7 +55,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item has-treeview menu-close">
+                            <li class="nav-item has-treeview ">
                                 <a href="<?php echo e(aurl('settings')); ?>"
                                     class="nav-link">
                                     <i class="nav-icon fas fa-cogs"></i>
@@ -308,6 +308,201 @@
                         </ul>
                     </li>
                 </ul>
+
+                
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                                    with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview <?php echo e(active_menu('trademarks')[0]); ?>">
+                        <a href="<?php echo e(aurl('trademarks')); ?>" class="nav-link">
+                            <i class="nav-icon fas fa-cube"></i>
+                            <p>
+                                <?php echo e(trans('admin.trademarks')); ?>
+
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview <?php echo e(active_menu('trademarks')[1]); ?>">
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('trademarks')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-cube nav-icon"></i>
+                                    <?php echo e(trans('admin.trademarks')); ?>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('trademarks/create')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    <?php echo e(trans('admin.create_trademark')); ?>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                                                with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview <?php echo e(active_menu('manufactures')[0]); ?>">
+                        <a href="<?php echo e(aurl('manufactures')); ?>"
+                            class="nav-link">
+                            <i class="nav-icon fas fa-industry"></i>
+                            <p>
+                                <?php echo e(trans('admin.manufactures')); ?>
+
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview <?php echo e(active_menu('manufactures')[1]); ?>">
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('manufactures')); ?>"
+                                    class="nav-link">
+                                    <i
+                                        class="fas fa-industry nav-icon"></i>
+                                    <?php echo e(trans('admin.manufactures')); ?>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('manufactures/create')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    <?php echo e(trans('admin.create_manufacture')); ?>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                                                with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview <?php echo e(active_menu('shipping')[0]); ?>">
+                        <a href="<?php echo e(aurl('shipping')); ?>" class="nav-link">
+                            <i class="nav-icon fas fa-truck"></i>
+                            <p>
+                                <?php echo e(trans('admin.shippings')); ?>
+
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview <?php echo e(active_menu('shipping')[1]); ?>">
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('shipping')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-truck nav-icon"></i>
+                                    <?php echo e(trans('admin.shippings')); ?>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('shipping/create')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    <?php echo e(trans('admin.create_shipping')); ?>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                                                with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview <?php echo e(active_menu('malls')[0]); ?>">
+                        <a href="<?php echo e(aurl('malls')); ?>" class="nav-link">
+                            <i class="nav-icon fas fa-building"></i>
+                            <p>
+                                <?php echo e(trans('admin.malls')); ?>
+
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview <?php echo e(active_menu('mall')[1]); ?>">
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('malls')); ?>"
+                                    class="nav-link">
+                                    <i
+                                        class="fas fa-building nav-icon"></i>
+                                    <?php echo e(trans('admin.malls')); ?>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('malls/create')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    <?php echo e(trans('admin.create_mall')); ?>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+                <ul class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview" role="menu"
+                    data-accordion="true">
+                    <!-- Add icons to the links using the .nav-icon class
+                                                            with font-awesome or any other icon font library -->
+                    <li
+                        class="nav-item has-treeview <?php echo e(active_menu('colors')[0]); ?>">
+                        <a href="<?php echo e(aurl('colors')); ?>" class="nav-link">
+                            <i class="nav-icon fas fa-palette"></i>
+                            <p>
+                                <?php echo e(trans('admin.colors')); ?>
+
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul
+                            class="nav nav-treeview <?php echo e(active_menu('mall')[1]); ?>">
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('colors')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-palette nav-icon"></i>
+                                    <?php echo e(trans('admin.colors')); ?>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo e(aurl('colors/create')); ?>"
+                                    class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    <?php echo e(trans('admin.create_color')); ?>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
             </nav>
         </div>
         <!-- /.sidebar-menu -->

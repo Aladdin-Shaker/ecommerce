@@ -64,14 +64,11 @@
             'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('icon',
-            trans('admin.icon')) !!}
-            {!! Form::file('icon', $department->icon,
-            ['class' =>
-            'form-control'])
-            !!}
-            @if (!empty(setting()->logo))
-            <img src="{{Storage::url(setting()->logo)}}" height="100px"
+            {!! Form::label('icon',trans('admin.icon')) !!}
+            {!! Form::file('icon',['class' =>'form-control']) !!}
+            @if (!empty($department->icon) &&
+            Storage::has($department->icon))
+            <img src="{{Storage::url($department->icon)}}" height="100px"
                 width="100px" />
             @endif
         </div>

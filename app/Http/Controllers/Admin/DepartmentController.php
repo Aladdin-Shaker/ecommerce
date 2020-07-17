@@ -120,17 +120,17 @@ class DepartmentController extends Controller
     public static function delete_parent($id)
     {
         $department_parent = Department::where('parent', $id)->get();
-        foreach ($department_parent as $sub) { // loop to get all the children departments
-            self::delete_parent($sub->id); // to get all children of children departments
+        foreach ($department_parent as $sub) { // loop to get all the down departments
+            self::delete_parent($sub->id); // to get all down of down departments
             if (!empty($sub->icon)) {
                 Storage::has($sub->icon) ? Storage::delete($sub->icon) : '';
             }
-            $child_dep = Department::find($sub->id);
-            if (!empty($child_dep)) {
-                $child_dep->delete(); // delete all children
+            $dep = Department::find($sub->id);
+            if (!empty($dep)) {
+                $dep->delete(); // delete all down
             }
         }
-        // delete the parent department
+        // delete the current department
         $parent_dep = Department::find($id);
         if (!empty($parent_dep->icon)) {
             Storage::has($parent_dep->icon) ? Storage::delete($parent_dep->icon) : '';

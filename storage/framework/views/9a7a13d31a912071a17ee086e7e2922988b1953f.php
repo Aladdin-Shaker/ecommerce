@@ -71,15 +71,13 @@
 
         </div>
         <div class="form-group">
-            <?php echo Form::label('icon',
-            trans('admin.icon')); ?>
+            <?php echo Form::label('icon',trans('admin.icon')); ?>
 
-            <?php echo Form::file('icon', $department->icon,
-            ['class' =>
-            'form-control']); ?>
+            <?php echo Form::file('icon',['class' =>'form-control']); ?>
 
-            <?php if(!empty(setting()->logo)): ?>
-            <img src="<?php echo e(Storage::url(setting()->logo)); ?>" height="100px"
+            <?php if(!empty($department->icon) &&
+            Storage::has($department->icon)): ?>
+            <img src="<?php echo e(Storage::url($department->icon)); ?>" height="100px"
                 width="100px" />
             <?php endif; ?>
         </div>

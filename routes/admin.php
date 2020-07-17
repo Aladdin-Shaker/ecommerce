@@ -21,6 +21,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::delete('countries/destroy/all', 'CountryController@multi_delete'); // delete all user records
         Route::delete('cities/destroy/all', 'CityController@multi_delete'); // delete all user records
         Route::delete('states/destroy/all', 'StateController@multi_delete'); // delete all user records
+        Route::delete('trademarks/destroy/all', 'TrademarksController@multi_delete'); // delete all user records
+        Route::delete('manufactures/destroy/all', 'ManufactureController@multi_delete'); // delete all user records
+        Route::delete('shipping/destroy/all', 'ShippingController@multi_delete'); // delete all user records
+        Route::delete('malls/destroy/all', 'MallController@multi_delete'); // delete all user records
+        Route::delete('colors/destroy/all', 'ColorController@multi_delete'); // delete all user records
 
         Route::resource('admin', 'AdminController');
         Route::resource('users', 'UserController');
@@ -28,6 +33,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::resource('cities', 'CityController');
         Route::resource('states', 'StateController');
         Route::resource('departments', 'DepartmentController');
+        Route::resource('trademarks', 'TrademarksController');
+        Route::resource('manufactures', 'ManufactureController');
+        Route::resource('shipping', 'ShippingController');
+        Route::resource('malls', 'MallController');
+        Route::resource('colors', 'ColorController');
 
         Route::get('/', function () {
             return view('admin.home');
