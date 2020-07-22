@@ -55,7 +55,7 @@ class ManufactureController extends Controller
         if (request()->has('icon')) {
             $data['icon'] = up()->upload([
                 'file' => 'icon',
-                'path' => 'public/manufactures',
+                'path' => 'manufactures',
                 'upload_type' => 'single',
                 'delete_file' => '',
             ]);
@@ -114,7 +114,7 @@ class ManufactureController extends Controller
         if (request()->has('icon')) {
             $data['icon'] = up()->upload([
                 'file' => 'icon',
-                'path' => 'public/manufactures',
+                'path' => 'manufactures',
                 'upload_type' => 'single',
                 'delete_file' => Manufacture::find($id)->icon,
             ]);

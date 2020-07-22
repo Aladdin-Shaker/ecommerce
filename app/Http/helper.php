@@ -97,6 +97,19 @@ if (!function_exists('up')) {
     }
 }
 
+// get the department with all his parent
+if (!function_exists('get_dep_parent')) {
+    function get_dep_parent($dep_id)
+    {
+        $department = \App\Model\Department::find($dep_id);
+        if ($department->parent !== null && $department->parent > 0) { // check if there a parent
+            return get_dep_parent($department->parent) . ',' . $dep_id; // call self function to loop all parent and get
+        } else {
+            return $dep_id; // there is no parent
+        }
+    }
+}
+
 if (!function_exists('load_dep')) {
     function load_dep($select = null, $dep_hide = null)
     {
@@ -133,6 +146,16 @@ if (!function_exists('load_dep')) {
             array_push($dep_array, $list_array);
         }
         return json_encode($dep_array, JSON_UNESCAPED_UNICODE);
+    }
+}
+
+// scan mall id exist
+if (!function_exists('checkMall')) {
+    function checkMall($mid, $pid)
+    {
+        return  \App\Model\ProductMall::where('mall_id', $mid)
+            ->where('product_id', $pid)
+            ->count() > 0 ? true : false;
     }
 }
 

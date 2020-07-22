@@ -151,6 +151,6 @@ class ColorDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'manufactures_' . date('YmdHis');
+        return 'colors_' . date('YmdHis');
     }
 }

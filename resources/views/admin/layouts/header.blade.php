@@ -63,5 +63,11 @@
     <!-- jsTree -->
     <link rel="stylesheet"
         href="{{url('/design/adminlte/jstree/themes/default/style.css')}}">
-
+    {{-- datapicker --}}
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    {{-- select2 --}}
+    <link
+        href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+        rel="stylesheet" />
 </head>

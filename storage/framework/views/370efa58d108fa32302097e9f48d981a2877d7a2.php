@@ -40,7 +40,7 @@
             <?php echo Form::label('mobile',
             trans('admin.mobile')); ?>
 
-            <?php echo Form::number('mobile', old('mobile'),
+            <?php echo Form::text('mobile', old('mobile'),
             ['class' =>
             'form-control']); ?>
 

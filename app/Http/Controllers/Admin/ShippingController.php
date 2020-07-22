@@ -49,7 +49,7 @@ class ShippingController extends Controller
         if (request()->has('icon')) {
             $data['icon'] = up()->upload([
                 'file' => 'icon',
-                'path' => 'public/shippings',
+                'path' => 'shippings',
                 'upload_type' => 'single',
                 'delete_file' => '',
             ]);
@@ -103,7 +103,7 @@ class ShippingController extends Controller
         if (request()->has('icon')) {
             $data['icon'] = up()->upload([
                 'file' => 'icon',
-                'path' => 'public/shippings',
+                'path' => 'shippings',
                 'upload_type' => 'single',
                 'delete_file' => Shipping::find($id)->icon,
             ]);

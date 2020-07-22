@@ -26,6 +26,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::delete('shipping/destroy/all', 'ShippingController@multi_delete'); // delete all user records
         Route::delete('malls/destroy/all', 'MallController@multi_delete'); // delete all user records
         Route::delete('colors/destroy/all', 'ColorController@multi_delete'); // delete all user records
+        Route::delete('sizes/destroy/all', 'SizeController@multi_delete'); // delete all user records
+        Route::delete('weights/destroy/all', 'WeightController@multi_delete'); // delete all user records
+        Route::delete('products/destroy/all', 'ProductController@multi_delete'); // delete all user records
 
         Route::resource('admin', 'AdminController');
         Route::resource('users', 'UserController');
@@ -38,13 +41,29 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::resource('shipping', 'ShippingController');
         Route::resource('malls', 'MallController');
         Route::resource('colors', 'ColorController');
+        Route::resource('sizes', 'SizeController');
+        Route::resource('weights', 'WeightController');
+        Route::resource('products', 'ProductController');
+
+        // upload product images
+        Route::post('upload/image/{pid}', 'ProductController@upload_files'); // upload another files
+        Route::post('update/image/{pid}', 'ProductController@update_main_photo'); // upload main photo
+        // delete product images from Dropzone
+        Route::post('delete/image', 'ProductController@delete_file'); // delete selected file
+        Route::post('delete/product/image/{pid}', 'ProductController@delete_main_image'); // delete main photo
+        // load size and weight according to department in the product
+        Route::post('load/weight/size', 'ProductController@prepare_weight_size');
+        // copy product data
+        Route::post('products/copy/{pid}', 'ProductController@product_copy');
+
+
+        Route::any('logout', 'AdminAuth@Logout');
+        Route::get('settings', 'Settings@settings');
+        Route::post('settings', 'Settings@settings_save');
 
         Route::get('/', function () {
             return view('admin.home');
         });
-        Route::any('logout', 'AdminAuth@Logout');
-        Route::get('settings', 'Settings@settings');
-        Route::post('settings', 'Settings@settings_save');
     });
 
 

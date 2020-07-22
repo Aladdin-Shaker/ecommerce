@@ -77,7 +77,7 @@
             <?php echo Form::label('contact_name',
             trans('admin.contact_name')); ?>
 
-            <?php echo Form::text('contact_name', $mall->contact_name,
+            <?php echo Form::text('contact_name', $mall->contact_name_mall,
             ['class' =>
             'form-control']); ?>
 

@@ -35,7 +35,7 @@
         <div class="form-group">
             {!! Form::label('mobile',
             trans('admin.mobile')) !!}
-            {!! Form::number('mobile', old('mobile'),
+            {!! Form::text('mobile', old('mobile'),
             ['class' =>
             'form-control']) !!}
         </div>

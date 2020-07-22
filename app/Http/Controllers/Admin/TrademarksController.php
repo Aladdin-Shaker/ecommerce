@@ -47,7 +47,7 @@ class TrademarksController extends Controller
         if (request()->has('logo')) {
             $data['logo'] = up()->upload([
                 'file' => 'logo',
-                'path' => 'public/trademarks',
+                'path' => 'trademarks',
                 'upload_type' => 'single',
                 'delete_file' => '',
             ]);
@@ -98,7 +98,7 @@ class TrademarksController extends Controller
         if (request()->has('logo')) {
             $data['logo'] = up()->upload([
                 'file' => 'logo',
-                'path' => 'public/trademarks',
+                'path' => 'trademarks',
                 'upload_type' => 'single',
                 'delete_file' => Trademarks::find($id)->logo,
             ]);

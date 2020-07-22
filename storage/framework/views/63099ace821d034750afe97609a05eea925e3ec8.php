@@ -40,7 +40,7 @@
             <?php echo Form::label('mobile',
             trans('admin.mobile')); ?>
 
-            <?php echo Form::number('mobile', old('mobile'),
+            <?php echo Form::text('mobile', old('mobile'),
             ['class' =>
             'form-control']); ?>
 
@@ -91,19 +91,19 @@
 
         </div>
         <div class="form-group">
-            <?php echo Form::label('latitude',
+            <?php echo Form::label('lat',
             trans('admin.latitude')); ?>
 
-            <?php echo Form::text('latitude', old('latitude'),
+            <?php echo Form::text('lat', old('lat'),
             ['class' =>
             'form-control']); ?>
 
         </div>
         <div class="form-group">
-            <?php echo Form::label('longitude',
+            <?php echo Form::label('lng',
             trans('admin.longitude')); ?>
 
-            <?php echo Form::text('longitude', old('longitude'),
+            <?php echo Form::text('lng', old('lng'),
             ['class' =>
             'form-control']); ?>
 

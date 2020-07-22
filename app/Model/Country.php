@@ -12,11 +12,17 @@ class Country extends Model
         'country_name_en',
         'mob',
         'code',
+        'currency',
         'logo',
     ];
 
     public function cities()
     {
-        return $this->hasMany('App\City');
+        return $this->hasMany('App\Model\City');
+    }
+
+    public function malls()
+    {
+        return $this->hasMany('App\Model\Mall');
     }
 }

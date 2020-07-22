@@ -38,6 +38,13 @@
             'form-control']) !!}
         </div>
         <div class="form-group">
+            {!! Form::label('currency',
+            trans('admin.country_currency')) !!}
+            {!! Form::text('currency', old('country_currency'),
+            ['class' =>
+            'form-control']) !!}
+        </div>
+        <div class="form-group">
             {!! Form::label('logo', trans('admin.country_flag')) !!}
             {!! Form::file('logo', ['class'
             =>

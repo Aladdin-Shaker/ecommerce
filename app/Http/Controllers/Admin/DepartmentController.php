@@ -50,8 +50,9 @@ class DepartmentController extends Controller
         if (request()->has('icon')) {
             $data['icon'] = up()->upload([
                 'file' => 'icon',
-                'path' => 'public/departments',
+                'path' => 'departments',
                 'upload_type' => 'single',
+                'delete_file' => ''
             ]);
         }
         Department::create($data);
@@ -92,7 +93,6 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $data =  $this->validate(request(), [
             'dep_name_ar' => 'required',
             'dep_name_en' => 'required',
@@ -104,7 +104,7 @@ class DepartmentController extends Controller
         if (request()->has('icon')) {
             $data['icon'] = up()->upload([
                 'file' => 'icon',
-                'path' => 'public/departments',
+                'path' => 'departments',
                 'upload_type' => 'single',
                 'delete_file' => Department::find($id)->icon,
 

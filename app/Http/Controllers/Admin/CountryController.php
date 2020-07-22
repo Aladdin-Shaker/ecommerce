@@ -43,12 +43,13 @@ class CountryController extends Controller
             'country_name_en' => 'required',
             'mob' => 'required',
             'code' => 'required',
+            'currency' => 'required',
             'logo' => 'sometimes|nullable|' . v_image(),
         ]);
         if (request()->has('logo')) {
             $data['logo'] = up()->upload([
                 'file' => 'logo',
-                'path' => 'public/countries',
+                'path' => 'countries',
                 'upload_type' => 'single',
                 'delete_file' => '',
 
@@ -97,6 +98,7 @@ class CountryController extends Controller
             'country_name_en' => 'required',
             'mob' => 'required',
             'code' => 'required',
+            'currency' => 'required',
             'logo' => 'required|' . v_image(),
         ]);
         if (request()->has('logo')) {

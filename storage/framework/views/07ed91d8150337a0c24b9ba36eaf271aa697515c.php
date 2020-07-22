@@ -48,6 +48,15 @@
 
         </div>
         <div class="form-group">
+            <?php echo Form::label('currency',
+            trans('admin.country_currency')); ?>
+
+            <?php echo Form::text('currency', $country->currency,
+            ['class' =>
+            'form-control']); ?>
+
+        </div>
+        <div class="form-group">
             <?php echo Form::label('logo', trans('admin.country_flag')); ?>
 
             <?php echo Form::file('logo', ['class'

@@ -30,7 +30,7 @@ class Settings extends Controller
         if (request()->has('logo')) {
             $data['logo'] = up()->upload([
                 'file' => 'logo',
-                'path' => 'public/settings',
+                'path' => 'settings',
                 'upload_type' => 'single',
                 'delete_file' => setting()->logo,
 
@@ -39,7 +39,7 @@ class Settings extends Controller
         if (request()->has('icon')) {
             $data['icon'] = up()->upload([
                 'file' => 'icon',
-                'path' => 'public/settings',
+                'path' => 'settings',
                 'upload_type' => 'single',
                 'delete_file' => setting()->icon,
 

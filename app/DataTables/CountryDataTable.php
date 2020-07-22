@@ -108,6 +108,11 @@ class CountryDataTable extends DataTable
                 'title' => trans('admin.country_name_en'),
             ],
             [
+                'name' => 'currency',
+                'data' => 'currency',
+                'title' => trans('admin.country_currency'),
+            ],
+            [
                 'name' => 'created_at',
                 'data' => 'created_at',
                 'title' => trans('admin.created_at'),
