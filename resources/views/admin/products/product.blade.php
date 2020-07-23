@@ -125,7 +125,7 @@
             </a>
             <a href="#"
                 class="btn btn-info product_copy">{{ trans('admin.copy') }}<i
-                    class="far fa-copy  m-1"></i><i
+                    class="far fa-copy m-1"></i><i
                     class="fa fa-spin fa-spinner spinner_copy d-none"></i></a>
             <a href="#" class="btn btn-danger" data-toggle="modal"
                 data-target="#exampleModal2">{{ trans('admin.delete') }}<i
@@ -184,6 +184,14 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" id="product_related-tab"
+                    data-toggle="tab" href="#product_related" role="tab"
+                    aria-controls="product_related"
+                    aria-selected="false">{{ trans('admin.product_related') }}
+                    <i class="fas fa-list"></i>
+                </a>
+            </li>
         </ul>
 
         {{-- tabs content --}}
@@ -194,8 +202,8 @@
             @include('admin.products.tabs.product_media')
             @include('admin.products.tabs.product_shipping_info')
             @include('admin.products.tabs.product_more_info')
+            @include('admin.products.tabs.product_related')
         </div>
-
 
         {{-- buttons --}}
         <div class="mb-3 mt-3">
@@ -215,11 +223,7 @@
                 data-target="#exampleModal2">{{ trans('admin.delete') }}<i
                     class="fas fa-trash  m-1"></i></a>
         </div>
-
         <hr>
-
-
-
         {!! Form::close() !!}
     </div>
     <!-- /.card-body -->

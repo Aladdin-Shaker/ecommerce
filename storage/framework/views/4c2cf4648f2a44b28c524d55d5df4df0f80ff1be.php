@@ -125,7 +125,7 @@
             </a>
             <a href="#"
                 class="btn btn-info product_copy"><?php echo e(trans('admin.copy')); ?><i
-                    class="far fa-copy  m-1"></i><i
+                    class="far fa-copy m-1"></i><i
                     class="fa fa-spin fa-spinner spinner_copy d-none"></i></a>
             <a href="#" class="btn btn-danger" data-toggle="modal"
                 data-target="#exampleModal2"><?php echo e(trans('admin.delete')); ?><i
@@ -190,6 +190,15 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" id="product_related-tab"
+                    data-toggle="tab" href="#product_related" role="tab"
+                    aria-controls="product_related"
+                    aria-selected="false"><?php echo e(trans('admin.product_related')); ?>
+
+                    <i class="fas fa-list"></i>
+                </a>
+            </li>
         </ul>
 
         
@@ -200,8 +209,8 @@
             <?php echo $__env->make('admin.products.tabs.product_media', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <?php echo $__env->make('admin.products.tabs.product_shipping_info', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <?php echo $__env->make('admin.products.tabs.product_more_info', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php echo $__env->make('admin.products.tabs.product_related', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </div>
-
 
         
         <div class="mb-3 mt-3">
@@ -222,11 +231,7 @@
                 data-target="#exampleModal2"><?php echo e(trans('admin.delete')); ?><i
                     class="fas fa-trash  m-1"></i></a>
         </div>
-
         <hr>
-
-
-
         <?php echo Form::close(); ?>
 
     </div>

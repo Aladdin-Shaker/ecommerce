@@ -63,6 +63,7 @@ return array(
     'App\\Model\\OtherData' => $baseDir . '/app/Model/OtherData.php',
     'App\\Model\\Product' => $baseDir . '/app/Model/Product.php',
     'App\\Model\\ProductMall' => $baseDir . '/app/Model/ProductMall.php',
+    'App\\Model\\RelatedProduct' => $baseDir . '/app/Model/RelatedProduct.php',
     'App\\Model\\Setting' => $baseDir . '/app/Model/Setting.php',
     'App\\Model\\Shipping' => $baseDir . '/app/Model/Shipping.php',
     'App\\Model\\Size' => $baseDir . '/app/Model/Size.php',

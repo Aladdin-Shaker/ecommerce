@@ -653,6 +653,7 @@ class ComposerStaticInit99d4841042aa6516311563686d65a590
         'App\\Model\\OtherData' => __DIR__ . '/../..' . '/app/Model/OtherData.php',
         'App\\Model\\Product' => __DIR__ . '/../..' . '/app/Model/Product.php',
         'App\\Model\\ProductMall' => __DIR__ . '/../..' . '/app/Model/ProductMall.php',
+        'App\\Model\\RelatedProduct' => __DIR__ . '/../..' . '/app/Model/RelatedProduct.php',
         'App\\Model\\Setting' => __DIR__ . '/../..' . '/app/Model/Setting.php',
         'App\\Model\\Shipping' => __DIR__ . '/../..' . '/app/Model/Shipping.php',
         'App\\Model\\Size' => __DIR__ . '/../..' . '/app/Model/Size.php',

@@ -10,6 +10,7 @@ use App\Model\OtherData;
 use Illuminate\Http\Request;
 use App\Model\Product;
 use App\Model\ProductMall;
+use App\Model\RelatedProduct;
 use App\Model\Size;
 use App\Model\Weight;
 use Illuminate\Support\Facades\File;
@@ -87,6 +88,16 @@ class ProductController extends Controller
                 ProductMall::create([
                     'product_id' => $id,
                     'mall_id' => $mall
+                ]);
+            }
+        }
+
+        if (request()->has('related')) {
+            RelatedProduct::where('product_id', $id)->delete();
+            foreach (request('related') as $related) {
+                RelatedProduct::create([
+                    'product_id' => $id,
+                    'related_product' => $related
                 ]);
             }
         }
@@ -175,6 +186,29 @@ class ProductController extends Controller
             ], 200);
         } else {
             return redirect(aurl('/'));
+        }
+    }
+
+    // search about product
+    public function product_search()
+    {
+        if (request()->ajax()) {
+            if (!empty(request('search')) && request()->has('search')) {
+                // get the related products according to product_id => already added
+                $related_Product = RelatedProduct::where('product_id', request('id'))->get(['related_product']);
+
+                $products = Product::where('title', 'LIKE', '%' . request('search') . '%')
+                    ->where('id', '!=', request('id')) // except the current product I edit it
+                    ->whereNotIn('id', $related_Product) // means dont give this data
+                    ->orderBy('id', 'desc')
+                    ->limit(15)->get();
+
+                return response([
+                    'status' => true,
+                    'result' => count($products) > 0 ? $products : 'No data matched',
+                    'count'  => count($products)
+                ], 200);
+            }
         }
     }
 

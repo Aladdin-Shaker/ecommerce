@@ -43,8 +43,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::resource('colors', 'ColorController');
         Route::resource('sizes', 'SizeController');
         Route::resource('weights', 'WeightController');
-        Route::resource('products', 'ProductController');
+        Route::resource('products', 'ProductController')->except('show');
 
+        // product search
+        Route::post('products/search', 'ProductController@product_search');
         // upload product images
         Route::post('upload/image/{pid}', 'ProductController@upload_files'); // upload another files
         Route::post('update/image/{pid}', 'ProductController@update_main_photo'); // upload main photo
